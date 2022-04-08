@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H_INCLUDED
-#define LINKEDLIST_H_INCLUDED
+#ifndef DIRECTEDGRAPHS_H_INCLUDED
+#define DIRECTEDGRAPHS_H_INCLUDED
 
 #include <initializer_list>
 #include <vector>
@@ -58,16 +58,21 @@ public:
     bool updateFirst(runType NewNodeLabel);
     bool updateLast(runType NewNodeLabel);
 
+};
+
     struct DirectedGraph {
     private:
         AdVertexList* adjacency; // El arreglo de la lista de adyacencia debe ser inicializado dinamicamente
+        int maxVertexCount;
         int vertexCount;
 
     public:
         DirectedGraph(); //costructor por defecto
         DirectedGraph(int vertexCount); // constructor parametrizado
-        ~DirectedGraph(); //destructor
-
+        // ~DirectedGraph(); //destructor
+				
+				bool addVertex(runType vertexName);
+				
         bool addAdjacentVertex(int sourceVertex, runType targetVertex); //Esta funci�n agrega un nuevo v�rtice adyacente al v�rtice cuyo �ndice se pasa como primer par�metro
         bool removeAdjacentVertex(int sourceVertex, runType removedVertex); //Esta funci�n elimina un v�rtice adyacente (removedVertex) del v�rtice cuyo �ndice se pasa como primer par�metro
         bool areConnected(int vertex1, int vertex2); //Determina si dos v�rtices/nodos (cuyos �ndices se pasan como paratemtros) son adyacentes
@@ -78,8 +83,6 @@ public:
 
     };
     
-};
 
 
-
-#endif // LINKEDLIST_H_INCLUDED
+#endif // DIRECTEDGRAPHS_H_INCLUDED

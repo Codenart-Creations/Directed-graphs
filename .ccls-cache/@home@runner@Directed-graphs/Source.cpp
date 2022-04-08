@@ -5,7 +5,13 @@ using namespace std;
 
 int main()
 {
-	AdVertexList test(8);
+	AdVertexList test(5);
+	DirectedGraph tttt;
+	if (tttt.addVertex(8))
+		cout << "it run\n";
+
+	// tttt.addVertex(8);
+	
 	cout << test.vertexName() << endl;
 	cout << test.len() << "\n";
 

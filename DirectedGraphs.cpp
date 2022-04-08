@@ -1,4 +1,7 @@
 #include "DirectedGraphs.h"
+#include <iostream>
+
+using namespace std;
 
 //--------------TDA AdVertexList Definition----------------
 /*
@@ -450,31 +453,61 @@ bool AdVertexList::updateLast(runType NewNodeLabel)
 Manipulation of AdVertexList vertex, stores each vertex of a directed graph with their adyacency in an array
 */
 
-AdVertexList::DirectedGraph::DirectedGraph()
+DirectedGraph::DirectedGraph()
 {
 	adjacency = nullptr;
 	vertexCount = 0;
+	maxVertexCount = 0;
 }
 
-AdVertexList::DirectedGraph::DirectedGraph(int numOfVertex)
+DirectedGraph::DirectedGraph(int numOfVertex)
 {
 	adjacency = new AdVertexList[numOfVertex];
-	vertexCount = numOfVertex;
+	maxVertexCount = numOfVertex;
+	vertexCount = 0;
 }
 
-//Esta funcion devuelve una lista ligada que contiene los nodos vecinos de un nodo cuyo vertice se pasa como parametro
-AdVertexList AdVertexList::DirectedGraph::getAdjacentVertices(runType vertexTarget)
+// It adds a new vertex to the array by taking a name as a potential vertex name as a parameter
+bool DirectedGraph::addVertex(runType vertexName)
 {
-	for (int of = 0; of < vertexCount; of++)
-	{
-		if (adjacency[of].vertexName() == vertexTarget)
-			return adjacency[of];
-	}
+	bool success = (vertexCount != maxVertexCount) ? true: false;
+	
+	if (success)
+		{
+		if (maxVertexCount == 0)
+		{
+			++maxVertexCount;
+			adjacency = new AdVertexList[maxVertexCount];
+			adjacency[vertexCount].vertexName(vertexName);
+			
+			vertexCount++;
+		}
+	
+		else 
+		{
+			adjacency[vertexCount].vertexName(vertexName);
+			vertexCount++;
+		}
+			
+		}
+		
 
-	return NULL;
+	return true;
 }
 
-bool addAdjacentVertex(int sourceVertex, int targetVertex)
-{
-	return false;
-}
+
+// AdVertexList DirectedGraph::getAdjacentVertices(runType vertexTarget)
+// {
+// 	for (int of = 0; of < vertexCount; of++)
+// 	{
+// 		if (adjacency[of].vertexName() == vertexTarget)
+// 			return adjacency[of];
+// 	}
+
+// 	return NULL;
+// }
+
+// bool addAdjacentVertex(int sourceVertex, int targetVertex)
+// {
+// 	return false;
+// }
