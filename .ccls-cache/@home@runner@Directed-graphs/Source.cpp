@@ -5,18 +5,26 @@ using namespace std;
 
 int main()
 {
-	AdVertexList test(5);
-	DirectedGraph tttt;
-	if (tttt.addVertex(8))
-		cout << "it run\n";
-
-	// tttt.addVertex(8);
-	
+	AdVertexList test(4);
+  //
+	 DirectedGraph tttt;
+	 tttt.addVertex(7);
+	 tttt.addVertex(8);
+  cout << tttt.getAdjacentVertices(7);
+	/*
 	cout << test.vertexName() << endl;
 	cout << test.len() << "\n";
 
-	test.append(7);
+	test.append(6);
 
 	cout << test.getFirst() << "\n";
 	cout << test.len() << "\n";
+
+  test.append(8);
+vector<int> a;
+	cout << test.getLast() << "\n";
+	cout << test.len() << "\n";
+
+  */
+  
 }

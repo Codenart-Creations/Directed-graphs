@@ -78,7 +78,7 @@ runType AdVertexList::vertexName()
 	return targetVertex->element.nodeLabel;
 }
 
-//Places element at the end of the list, if index < 0 or index > numAdjacent returns false and doesnt run
+//Places element at a position of the list, if index < 0 or index > numAdjacent returns false and doesnt run
 bool AdVertexList::insert(int index, runType nodeLabel)
 {
 	bool valid = (index >= 0 && index < numAdjacent) ? true : false;
@@ -160,7 +160,7 @@ bool AdVertexList::append(runType nodeLabel)
 	return true;
 }
 
-//Deletes element at the end of the list, if index < 0 or index > numAdjacent returns false and doesnt run
+//Deletes element at a position of the list, if index < 0 or index > numAdjacent returns false and doesnt run
 bool AdVertexList::deleteAt(int index, runType& returnNodeLabel)
 {
 	bool valid = (index >= 0 && index < numAdjacent) ? true : false;
@@ -204,7 +204,7 @@ bool AdVertexList::deleteAt(int index, runType& returnNodeLabel)
 	return valid;
 }
 
-//Deletes element at the end of the list, if index < 0 or index > numAdjacent returns false and doesnt run
+//Deletes element at a position of the list, if index < 0 or index > numAdjacent returns false and doesnt run
 bool AdVertexList::deleteAt(int index)
 {
 	bool valid = (index >= 0 && index < numAdjacent) ? true : false;
@@ -496,16 +496,16 @@ bool DirectedGraph::addVertex(runType vertexName)
 }
 
 
-// AdVertexList DirectedGraph::getAdjacentVertices(runType vertexTarget)
-// {
-// 	for (int of = 0; of < vertexCount; of++)
-// 	{
-// 		if (adjacency[of].vertexName() == vertexTarget)
-// 			return adjacency[of];
-// 	}
+ AdVertexList DirectedGraph::getAdjacentVertices(runType vertexTarget)
+ {
+ 	//for (int of = 0; of < vertexCount; of++)
+ 	//{
+ 	//	if (adjacency[of].vertexName() == vertexTarget)
+ 	//		return adjacency[of];
+ 	//}
 
-// 	return NULL;
-// }
+ 	//return NULL;
+ }
 
 // bool addAdjacentVertex(int sourceVertex, int targetVertex)
 // {

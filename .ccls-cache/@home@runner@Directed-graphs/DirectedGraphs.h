@@ -60,6 +60,8 @@ public:
 
 };
 
+
+
     struct DirectedGraph {
     private:
         AdVertexList* adjacency; // El arreglo de la lista de adyacencia debe ser inicializado dinamicamente
@@ -73,7 +75,7 @@ public:
 				
 				bool addVertex(runType vertexName);
 				
-        bool addAdjacentVertex(int sourceVertex, runType targetVertex); //Esta funci�n agrega un nuevo v�rtice adyacente al v�rtice cuyo �ndice se pasa como primer par�metro
+        bool addAdjacentVertex(int sourceVertex, runType targetVertex); //Esta funcion agrega un nuevo vertice adyacente al vertice cuyo indice se pasa como primer parametro
         bool removeAdjacentVertex(int sourceVertex, runType removedVertex); //Esta funci�n elimina un v�rtice adyacente (removedVertex) del v�rtice cuyo �ndice se pasa como primer par�metro
         bool areConnected(int vertex1, int vertex2); //Determina si dos v�rtices/nodos (cuyos �ndices se pasan como paratemtros) son adyacentes
         AdVertexList getAdjacentVertices(runType vertexTarget); //Esta funci�n devuelve una lista ligada que contiene los nodos vecinos del nodo cuyo v�rtice se pasa como par�metro
