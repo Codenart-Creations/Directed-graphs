@@ -1,1 +1,1 @@
-DirectedGraphs.o DirectedGraphs.d : DirectedGraphs.cpp DirectedGraphs.h
+DirectedGraphs.o DirectedGraphs.d : DirectedGraphs.cpp DirectedGraphs.h AdVertexList.h
