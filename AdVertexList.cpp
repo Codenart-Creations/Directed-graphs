@@ -302,7 +302,6 @@ bool AdVertexList::deleteThis(int nodeLabel)
 			{
 				found = true;
 				this->deleteAt(i);
-				length--;
 				break;
 			}
 
